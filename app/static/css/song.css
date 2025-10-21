@@ -1,0 +1,133 @@
+/* General page styling */
+body {
+    font-family: "Poppins", sans-serif;
+    margin: 0;
+    background-color: #f8f9fa;
+    color: #222;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+/* --- Ad Section --- */
+.ad-section {
+    background-color: #e9ecef;
+    text-align: center;
+    padding: 10px 0;
+    border-bottom: 1px solid #ccc;
+}
+
+.ad-box {
+    background: #dcdcdc;
+    padding: 20px;
+    border-radius: 8px;
+    display: inline-block;
+    font-weight: 500;
+}
+
+/* --- Song Section --- */
+.song-section {
+    flex: 1;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 40px 20px;
+    gap: 30px;
+}
+
+.song-left img {
+    width: 280px;
+    height: 280px;
+    object-fit: cover;
+    border-radius: 12px;
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+/* Right side layout */
+.song-right {
+    max-width: 400px;
+}
+
+.song-title {
+    font-size: 1.8rem;
+    margin-bottom: 5px;
+}
+
+.song-artist {
+    font-size: 1.2rem;
+    color: #666;
+    margin-bottom: 10px;
+}
+
+.song-info {
+    font-size: 0.95rem;
+    color: #777;
+    margin-bottom: 25px;
+}
+
+/* --- Buttons --- */
+.song-controls {
+    display: flex;
+    gap: 15px;
+}
+
+.play-btn, .like-btn {
+    background-color: #d62828;
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: 0.3s ease;
+    width: 120px;
+    text-align: center;
+}
+
+.play-btn:hover {
+    background-color: #b71c1c;
+}
+
+/* Like button toggle */
+.like-btn.liked {
+    background-color: #2ecc71;
+}
+
+/* --- Music Controls Section --- */
+.music-controls {
+    text-align: center;
+    padding: 20px;
+    background: #ffffff;
+    border-top: 1px solid #ddd;
+    box-shadow: 0 -2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.music-controls button {
+    background-color: #343a40;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 1rem;
+    border-radius: 8px;
+    cursor: pointer;
+    margin: 0 10px;
+    transition: 0.3s ease;
+}
+
+.music-controls button:hover {
+    background-color: #495057;
+}
+
+/* --- Footer --- */
+.footer {
+    background-color: #222;
+    color: white;
+    text-align: center;
+    padding: 10px;
+    font-size: 0.9rem;
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+}
