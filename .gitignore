@@ -1,1 +1,3 @@
-\app\templates\app\home.html
+/app/static/
+createviews.py
+/media/

@@ -3,9 +3,10 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <H1 style="text-align: center;">Artist Page</H1>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>{{ song.title }} - Musiker</title>
+    <title>Album {{ album.title }} - SONGAT</title>
     <link rel="stylesheet" href="{% static 'css/song.css' %}">
 </head>
 <body>
@@ -21,36 +22,26 @@
     <main class="song-section">
         <!-- Left: Song Image -->
         <div class="song-left">
-            <img src="{{ song.cover_image.url }}" alt="{{ song.title }}" class="song-image">
+            <img src="{{ album.cover.url }}" alt="{{ album.title }}" class="song-image">
         </div>
 
         <!-- Right: Song Details -->
         <div class="song-right">
-            <h1 class="song-title">{{ song.title }}</h1>
-            <h3 class="song-artist">{{ song.artist }}</h3>
+            <h1 class="song-title">Album : {{ album.title }}</h1>
 
             <p class="song-info">
-                <span class="duration">{{ song.duration }}</span> |
-                <span class="release-date">{{ song.release_date }}</span>
+                <span class="duration">Released : {{ album.release_date }}</span>
             </p>
 
             <div class="song-controls">
-                <button class="play-btn">▶ Play</button>
                 <button class="like-btn" id="like-btn">❤</button>
             </div>
         </div>
     </main>
 
-    <!-- Player Controls Section -->
-    <section class="music-controls">
-        <button class="prev-btn" id="prev-btn">⏮ Prev</button>
-        <button class="play-pause-btn" id="play-pause-btn">⏸ Pause</button>
-        <button class="next-btn" id="next-btn">Next ⏭</button>
-    </section>
-
     <!-- Footer -->
     <footer class="footer">
-        <p>© 2025 Musiker. All rights reserved.</p>
+        <p>© 2025 SONGAT. All rights reserved.</p>
     </footer>
 
     <!-- External JS -->
@@ -58,4 +49,3 @@
 
 </body>
 </html>
-
