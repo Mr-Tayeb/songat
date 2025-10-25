@@ -1,0 +1,36 @@
+{% extends 'app/base.html' %}
+<H1>Profile Page</H1>
+<p>Welcome {{ user.username|upper }}</p>
+
+
+
+{% block content %}
+    <p>
+        This way, you get: <br/>
+
+            ✅ Security (POST + CSRF) <br/>
+            ✅ Reusability (define once, use everywhere) <br/>
+            ✅ Flexibility (custom classes and text) <br/>
+            ✅ Visual consistency (looks exactly like your original link) <br/>
+            ✅ No JavaScript dependencies
+    </p>
+
+    <br/>
+    <a href="{% url 'Home' %}">Home Page</a>
+    <br/>
+
+
+    <br/>
+    <a href="#" onclick="document.getElementById('logout-form').submit(); return false;">
+        Logout
+    </a>
+
+    <br/>
+    <br/>
+
+    <a href="#" onclick="document.getElementById('logout-form').submit(); return false;" class="auth-btn logout-btn">
+        LOG OUT
+    </a>
+
+{% endblock %}
+

@@ -1,0 +1,89 @@
+{% load static %}
+{% include "app/logout.html" %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}SONGAT - Music Streaming{% endblock %}</title>
+    <link rel ="icon" href="{% static 'songat_icon.png' %}" type="image/x-icon">
+    <link rel="stylesheet" href="{% static 'css/home.css' %}">
+</head>
+<body>
+    <div class="container">
+        <!-- Sidebar -->
+        <aside class="sidebar">
+            <div class="logo"><a href="{% url 'Home' %}">SONGAT</a></div>
+            
+            <div class="nav-section">
+                <h3>Your Music</h3>
+                <ul class="nav-links">
+                    {% if user.is_authenticated %}
+                        <li><a href="{% url 'profile' %}">Profile</a></li>
+                    {% endif %}
+                    <li><a href="#">Songs</a></li>
+                    <li><a href="#">Playlists</a></li>
+                    <li><a href="#">Artists</a></li>
+                    <li><a href="#">Alarms</a></li>
+                    <li><a href="#">History</a></li>
+                    <li><a href="#">Podcasts</a></li>
+                </ul>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="header">
+                <h1 class="page-title">{% block page_title %}New Music Friday{% endblock %}</h1>
+                <div class="user-info">
+                    {% if user.is_authenticated %}
+                        <div class="user-auth-buttons">
+                            <a href="{% url 'profile' %}" class="auth-btn username-btn">{{ user.username|upper }}</a>
+                            <a href="{% url 'logout' %}" class="auth-btn logout-btn">LOGOUT</a>
+                            <a href="#" class="auth-btn logout-btn" onclick="document.getElementById('logout-form').submit(); return false;">
+                                LOGOUT
+                            </a>
+                        </div>
+                    {% else %}
+                        <div class="user-auth-buttons">
+                            <a href="{% url 'login' %}" class="auth-btn login-btn">LOGIN</a>
+                            <a href="{% url 'register' %}" class="auth-btn register-btn">REGISTER</a>
+                        </div>
+                    {% endif %}
+                </div>
+            </header>
+
+            {% block content %}
+            <!-- Page content goes here -->
+            {% endblock %}
+        </main>
+    </div>
+
+    <!-- Player Controls -->
+    <footer class="player-controls">
+        <div class="now-playing">
+            <div class="album-art small">Now Playing</div>
+            <div class="now-playing-info">
+                <div class="now-playing-title">Song Title</div>
+                <div class="now-playing-artist">Artist Name</div>
+            </div>
+        </div>
+        
+        <div class="playback-controls">
+            <button class="control-btn">⏮</button>
+            <button class="control-btn play-btn">▶</button>
+            <button class="control-btn">⏭</button>
+        </div>
+        
+        <div class="volume-controls">
+            <button class="control-btn">🔊</button>
+            <div class="progress-bar">
+                <div class="progress"></div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="{% static 'js/home.js' %}"></script>
+</body>
+</html>
